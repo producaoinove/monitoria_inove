@@ -1,5 +1,6 @@
+import time
 import logging
-
+from collections import defaultdict
 
 def monitorar_uravoz(logging: logging.Logger) -> list:
     """
@@ -23,7 +24,7 @@ def monitorar_uravoz(logging: logging.Logger) -> list:
         ambiente_uravoz,
         login_uravoz,
         senha_uravoz,
-        dados_uravoz,
+        inicializar_dict_ipbox,
         relatorios_uravoz,
         lista_padrao_filas_uravoz,
         path_log,
@@ -64,6 +65,8 @@ def monitorar_uravoz(logging: logging.Logger) -> list:
     try:
         logging.info("monitorar_inove >> uravoz >>Coletar informacoes no navegador...")
 
+        dados_uravoz = defaultdict(inicializar_dict_ipbox)
+
         res = coletar_dados_ipbox(
             browser,
             dados_uravoz,
@@ -79,10 +82,12 @@ def monitorar_uravoz(logging: logging.Logger) -> list:
 
         logging.info("monitorar_inove >> uravoz >>Informacoes coletadas com sucesso!")
     except Exception as e:
-        logging.error(
-            f"monitorar_inove >> uravoz >>Erro ao coletar informacoes, detalhes: {str(e)}"
-        )
-        sys.exit(1)
+        if 'list index out of range' in str(e): dados_uravoz2 = dados_uravoz2
+        else:
+            logging.error(
+                f"monitorar_inove >> uravoz2 >>Erro ao coletar informacoes, detalhes: {str(e)}"
+            )
+            sys.exit(1)
 
     try:
         logging.info("monitorar_inove >> uravoz >>Fechando navegador...")

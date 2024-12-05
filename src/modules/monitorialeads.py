@@ -1,3 +1,4 @@
+import time
 def executar_monitorleads() -> list:
     """
     Realiza a execução do bot de monitoramento de leads.

@@ -6,6 +6,7 @@ from .functions import (
     post_acompanhamento,
     logar_no_whatsapp,
     enviar_mensagem,
+    zap_api_insert
 )
 from .monitor_uravoz import monitorar_uravoz
 from .monitor_uravoz2 import monitorar_uravoz2
@@ -13,3 +14,4 @@ from .monitor_urazap import monitorar_urazap
 from .monitoriamailing import monitorar_mailing
 from .monitorialeads import executar_monitorleads
 from .monitoriavonix import monitorar_vonix
+from .monitoria_interna import monitorar_internamente

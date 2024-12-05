@@ -40,10 +40,6 @@ def inicializar_dict_ipbox():
 
 # Pastas que serão criadas caso não existam
 lista_pastas = []
-lista_pastas.append(path_data)
-lista_pastas.append(path_doc)
-lista_pastas.append(path_json)
-lista_pastas.append(path_temp)
 lista_pastas.append(path_src)
 lista_pastas.append(path_log)
 
@@ -75,7 +71,6 @@ relatorios_uravoz = []
 relatorios_uravoz.append(filasativas_uravoz)
 relatorios_uravoz.append(lotesrodando_uravoz)
 relatorios_uravoz.append(mailingrodando_uravoz)
-dados_uravoz = defaultdict(inicializar_dict_ipbox)
 lista_padrao_filas_uravoz = [
     "NIVA",
     "RCS",
@@ -98,7 +93,7 @@ relatorios_uravoz2 = []
 relatorios_uravoz2.append(filasativas_uravoz2)
 relatorios_uravoz2.append(lotesrodando_uravoz2)
 relatorios_uravoz2.append(mailingrodando_uravoz2)
-dados_uravoz2 = defaultdict(inicializar_dict_ipbox)
+
 lista_padrao_filas_uravoz2 = ["URA MEI"]
 
 # Variáveis de ambiente URAZAP
@@ -129,7 +124,7 @@ periodos_execucao: dict = {
 
 # Variaveis monitorias
 ambiente_monitorialeads = ambiente_uravoz
-ambiente_nossaura: str = os.getenv("AMBIENTE_URAZAP")
+ambiente_nossaura: str = os.getenv("AMBIENTE_NOSSAURA")
 campanha_nossaura: str = os.getenv("CAMPANHA_NOSSAURA")
 login_nossaura: str = os.getenv("LOGIN_NOSSAURA")
 senha_nossaura: str = os.getenv("SENHA_NOSSAURA")

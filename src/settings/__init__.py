@@ -8,19 +8,16 @@ from .variables import (
     login_uravoz,
     senha_uravoz,
     relatorios_uravoz,
-    dados_uravoz,
     lista_padrao_filas_uravoz,
     ambiente_uravoz2,
     login_uravoz2,
     senha_uravoz2,
     relatorios_uravoz2,
-    dados_uravoz2,
     lista_padrao_filas_uravoz2,
     ambiente_urazap,
     login_urazap,
     senha_urazap,
     relatorios_urazap,
-    dados_urazap,
     lista_padrao_filas_urazap,
     periodos_execucao,
     ambiente_monitorialeads,
@@ -42,5 +39,6 @@ from .variables import (
     login_vonix,
     senha_vonix,
     dialer_vonix,
+    inicializar_dict_ipbox
 )
 from .setup import setup_log, validar_pastas, validar_pacotes
